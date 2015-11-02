@@ -1,0 +1,7 @@
+sub myfunc
+{
+    my $name=shift;
+    my $ids=shift;
+    print "ids=$ids\n";
+}
+myfunc("me",1,1,2)

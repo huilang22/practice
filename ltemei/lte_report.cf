@@ -1,0 +1,16 @@
+#######################################################################
+# WCDMA/LTE Status Display Report & RF Sharing Report config file
+#
+
+# Autorefresh Interval for LTE Status Display Report. In Seconds
+# default to 20 seconds
+lte_autorefresh_interval=20
+
+# Autorefresh Interval for RF Sharing Report. In Seconds
+# default to 20 seconds
+rfs_autorefresh_interval=20
+
+# Autorefresh Interval for WCDMA Status Display Report. In Seconds
+# default to 20 seconds
+wcdma_autorefresh_interval=20
+

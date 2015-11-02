@@ -1,0 +1,19 @@
+#/START
+TAG:
+IDENTIFIER:1
+#Beginning of the addition of the subsystem LTEMEI
+#(action BLOCK_LNCEL "blocklncelmx.pl" "block -intid " "Element_Mgmt.Element_Manager.Use")
+#(action UNBLOCK_LNCEL "blocklncelmx.pl" "unblock -intid " "Element_Mgmt.Element_Manager.Use")
+(action RESET_LNBTS "blocklncelmx.pl" "lnbts_reset -intid " "Element_Mgmt.Element_Manager.Use")
+(action RESET_LNCEL "blocklncelmx.pl" "lncel_reset -intid " "Element_Mgmt.Element_Manager.Use")
+(action IMMEDIATE_LOCK_LNCEL "blocklncelmx.pl" "lock -intid " "Element_Mgmt.Element_Manager.Use")
+(action GRACEFUL_LOCK_LNCEL "blocklncelmx.pl" "shutdown -intid " "Element_Mgmt.Element_Manager.Use")
+(action UNLOCK_LNCEL "blocklncelmx.pl" "unlock -intid " "Element_Mgmt.Element_Manager.Use")
+(action STATUS_eNB "blocklncelmx.pl" "showme -intid " "Element_Mgmt.Element_Manager.Use")
+(action STATUS_CLUSTER "blocklncelmx.pl" "showcluster -intid " "Element_Mgmt.Element_Manager.Use")
+(action EMS_EM_MRBTS "emilaumx.sh" "-intid " "Element_Mgmt.Element_Manager.Use")
+(action ALARM_UPLOAD_FROM_PARENT "aup_from_mrbts.pl" "" "Fault_Mgmt.Alarm_IniDB_Upload.Use")
+#End of the addition of the subsystem LTEMEI
+
+#/END
+

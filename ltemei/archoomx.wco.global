@@ -1,0 +1,97 @@
+
+# ***********************************************************************
+#
+#       $File: archoomx.wco $
+#
+#       Copyright (c) Nokia Networks 1991-2001
+# ***********************************************************************
+#
+#
+#       Subsystem specific additions to the default configuration of
+#       Alarm Trigger Process archoomx (archoomx.cf).
+#       Contains triggering rules which define processes to be trigger-
+#       ed in case incoming alarms match rules.
+#
+#       System component: UMA/UMALTE
+#       Subsystem:        LTEMEI
+#       Cluster type:     Regional
+#
+# ***********************************************************************
+
+#/START
+TAG:
+IDENTIFIER:1
+
+# Beginning of the addition of subsystem LTEMEI
+
+# Alarm database upload is launched for  LTE
+# objects when they are released from maintenance mode.
+(TriggerRule "uma-umalte-ltemei-OssAlarmUploadTrigger1"
+        (Criteria ""
+                (AlarmNumber "9251")
+                (Severity "CANCEL")
+                (ObjectClass "MRBTS")
+        )
+        (Process "aduinimx -uploadType CNTRL  %intId%")
+        (NbrOfSimilarProcesses "10")
+)
+(TriggerRule "uma-umalte-ltemei-OssAlarmUploadTrigger2"
+        (Criteria ""
+                (AlarmNumber "9251")
+                (Severity "CANCEL")
+                (ObjectClass "LNBTS")
+        )
+        (Process "Lncelaltrigger.pl %intId%")
+        (NbrOfSimilarProcesses "10")
+)
+(TriggerRule "uma-umalte-ltemei-LncelAlarmUploadTrigger1"
+        (Criteria ""
+                (AlarmNumber "9251")
+                (Severity "CANCEL")
+                (ObjectClass "LNCEL")
+        )
+        (Process "wcelaltrigger.pl %intId%")
+        (NbrOfSimilarProcesses "10")
+)
+#######Since COR is crontab instead. alarm trigger was not used.
+#(TriggerRule "uma-umalte-ltemei-BTSCellOutageResetTrigger1"
+#        (Criteria ""
+#                (AlarmNumber "69301")
+#                (ObjectClass "LNCEL")
+#        )
+#        (Process "blocklncelmx.pl  69301 -intid %intId%")
+#        (NbrOfSimilarProcesses "10")
+#)
+#(TriggerRule "uma-umalte-ltemei-BTSCellOutageResetTrigger2"
+#        (Criteria ""
+#                (AlarmNumber "69302")
+#                (ObjectClass "LNCEL")
+#        )
+#        (Process "blocklncelmx.pl  69302 -intid %intId%")
+#        (NbrOfSimilarProcesses "10")
+#)
+#(TriggerRule "uma-umalte-ltemei-BTSCellOutageResetTrigger3"
+#        (Criteria ""
+#                (AlarmNumber "69303")
+#                (ObjectClass "LNCEL")
+#        )
+#        (Process "blocklncelmx.pl  69303 -intid %intId%")
+#        (NbrOfSimilarProcesses "10")
+#)
+
+##############################################################################
+#Add the Trigger Rule for CELL Reset automatically, but need be commented out.
+#The parameters for the perl script should be "cellreset", "-intid", "%intId".
+##############################################################################
+#(TriggerRule "uma-umalte-ltemei-OssAlarmUploadTrigger2"
+#        (Criteria ""
+#                (AlarmNumber "xxxxx")
+#                (ObjectClass "LNCEL")
+#        )
+#        (Process "blocklncelmx.pl cellreset -intid %intId%")
+#        (NbrOfSimilarProcesses "10")
+#)
+
+
+# End of the addition of the subsystem LTEMEI
+#/END

@@ -1,0 +1,8 @@
+#/START
+TAG:supported_managed_objects|/
+IDENTIFIER:1
+(object_class "MRBTS")
+(object_class "LNBTS")
+
+#/END
+

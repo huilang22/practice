@@ -1,0 +1,12 @@
+########################################################
+# DO NOT REMOVE THIS LINE! @V1.0
+#
+# deifine BLOCKLIST
+#
+# format: one LNBTS id in each line
+# example:
+# LNBTS-1
+# LNBTS-2
+# LNBTS-3
+########################################################
+
