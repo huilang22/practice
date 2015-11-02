@@ -8,7 +8,9 @@ import LTEStatusActions
 
 class LTEStatusSubControl:
     def __init__(self):
+    
         self.dataFetch = LTEStatusDataFetch();
+        
         self.actionCls_list = ["LTEStatusActions"];
         #####################################################################################
         #moved the columnDef and mainmenu and ... definition here ,when LTEStatusControl call
