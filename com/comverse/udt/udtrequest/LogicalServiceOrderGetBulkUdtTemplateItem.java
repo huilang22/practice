@@ -1,0 +1,80 @@
+/**----------------------------------------------------------------------------+
+ *                       Copyright 2006 by Comverse, Inc.                      |
+ *                            All Rights Reserved                              |
+ *-----------------------------------------------------------------------------+
+ *
+ * Filename
+ * ========
+ * LogicalServiceOrderGetBulkUdtTemplateItem.java
+ *
+ * DO NOT EDIT. THIS IS AN AUTOMATICALLY GENERATED FILE.
+ *-----------------------------------------------------------------------------*/
+
+package com.comverse.udt.udtrequest;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.math.BigInteger;
+
+import com.csgsystems.api.bulk.*;
+import com.csgsystems.udt.*;
+
+import com.csgsystems.aruba.connection.BSDMSessionContext;
+import com.csgsystems.cf.data.*;
+import com.csgsystems.om.data.*;
+
+/**
+ *
+ * Class used to create a LogicalServiceOrderGetBulkUdtTemplateItem Bulk Template
+ *
+ */
+
+public class LogicalServiceOrderGetBulkUdtTemplateItem extends BulkUdtTemplateItem {
+  protected LogicalServiceOrderObjectKeyData LogicalServiceOrderGetIn;
+/**
+ *
+ * Constructor to create a  LogicalServiceOrderGetBulkUdtTemplateItem
+ * @param id Unique request name
+ *
+ */
+  public LogicalServiceOrderGetBulkUdtTemplateItem(String id, BSDMSessionContext context, LogicalServiceOrderObjectKeyData LogicalServiceOrderGetInIn) {
+    super(id, context, "LogicalServiceOrderGet");
+    LogicalServiceOrderGetIn = LogicalServiceOrderGetInIn;
+  }
+
+  public void translateToMap() {
+    if (LogicalServiceOrderGetIn != null) {
+      LogicalServiceOrderGetIn.resetFlags(true, true);
+      addInput("LogicalServiceOrder", LogicalServiceOrderObjectKeyHelper.toMap(LogicalServiceOrderGetIn, new HashMap(), "LogicalServiceOrderObjectKeyData").get("LogicalServiceOrderObjectKeyData"));
+    }
+  }
+
+
+/**
+ *
+ * Sets the LogicalServiceOrder
+ * @param LogicalServiceOrderGetInIn Value of the LogicalServiceOrderGetIn
+ *
+ */
+
+  public void setLogicalServiceOrder(LogicalServiceOrderObjectKeyData LogicalServiceOrderGetInIn) {
+    LogicalServiceOrderGetIn = LogicalServiceOrderGetInIn;
+  }
+
+  public void translateFromMap() {
+    LogicalServiceOrderGetIn = LogicalServiceOrderObjectKeyHelper.fromMap(inputMap, "LogicalServiceOrder");
+  }
+
+/**
+ *
+ * Gets the LogicalServiceOrder
+ * @return Value of the LogicalServiceOrder
+ *
+ */
+
+  public LogicalServiceOrderObjectKeyData getLogicalServiceOrder( ) {
+    return LogicalServiceOrderGetIn;
+  }
+
+}

@@ -1,0 +1,74 @@
+/*
+ * Generated code DO NOT EDIT
+ * Generated file: ItemTypeFindBulkUdtTemplateItem.java
+ * Copyright 2006 Comverse, Inc. All Rights Reserved.
+*/
+
+package com.csgsystems.udt.customerudtrequest;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.math.BigInteger;
+
+import com.csgsystems.api.bulk.*;
+import com.csgsystems.udt.*;
+
+import com.csgsystems.aruba.connection.BSDMSessionContext;
+import com.csgsystems.om.data.*;
+
+/**
+ *
+ * Class used to create a ItemTypeFindBulkUdtTemplateItem Bulk Template
+ *
+ */
+
+public class ItemTypeFindBulkUdtTemplateItem extends BulkUdtTemplateItem {
+  protected ItemTypeObjectFilter ItemTypeFindIn;
+/**
+ *
+ * Constructor to create a  ItemTypeFindBulkUdtTemplateItem
+ * @param id Unique request name
+ *
+ */
+  public ItemTypeFindBulkUdtTemplateItem(String id, BSDMSessionContext context, ItemTypeObjectFilter ItemTypeFindInIn) {
+    super(id, context, "ItemTypeFind");
+    ItemTypeFindIn = ItemTypeFindInIn;
+  }
+
+  public void translateToMap() {
+    if (ItemTypeFindIn != null) {
+      Integer index =  ItemTypeFindIn.getIndex();
+      if (index != null) addInput("Index", index);
+      addInput("ItemType", ItemTypeObjectHelper.toMap(ItemTypeFindIn, new HashMap(), "ItemType").get("ItemType"));
+    }
+  }
+
+
+/**
+ *
+ * Sets the ItemType
+ * @param ItemTypeFindInIn Value of the ItemTypeFindIn
+ *
+ */
+
+  public void setItemType(ItemTypeObjectFilter ItemTypeFindInIn) {
+    ItemTypeFindIn = ItemTypeFindInIn;
+  }
+
+  public void translateFromMap() {
+    ItemTypeFindIn = ItemTypeObjectHelper.fromMapFilter(inputMap, "ItemType");
+  }
+
+/**
+ *
+ * Gets the ItemType
+ * @return Value of the ItemType
+ *
+ */
+
+  public ItemTypeObjectFilter getItemType( ) {
+    return ItemTypeFindIn;
+  }
+
+}

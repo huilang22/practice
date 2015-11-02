@@ -1,0 +1,73 @@
+/*
+ * Generated code DO NOT EDIT
+ * Generated file: UsageTypeUpdateBulkUdtTemplateItem.java
+ * Copyright 2006 Comverse, Inc. All Rights Reserved.
+*/
+
+package com.csgsystems.udt.customerudtrequest;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.math.BigInteger;
+
+import com.csgsystems.api.bulk.*;
+import com.csgsystems.udt.*;
+
+import com.csgsystems.aruba.connection.BSDMSessionContext;
+import com.csgsystems.cf.data.*;
+
+/**
+ *
+ * Class used to create a UsageTypeUpdateBulkUdtTemplateItem Bulk Template
+ *
+ */
+
+public class UsageTypeUpdateBulkUdtTemplateItem extends BulkUdtTemplateItem {
+  protected UsageTypeObjectData UTUpdIn;
+/**
+ *
+ * Constructor to create a  UsageTypeUpdateBulkUdtTemplateItem
+ * @param id Unique request name
+ *
+ */
+  public UsageTypeUpdateBulkUdtTemplateItem(String id, BSDMSessionContext context, UsageTypeObjectData UTUpdInIn) {
+    super(id, context, "UsageTypeUpdate");
+    UTUpdIn = UTUpdInIn;
+  }
+
+  public void translateToMap() {
+    if (UTUpdIn != null) {
+      UTUpdIn.resetFlags(true, true);
+      addInput("UsageType", UsageTypeObjectHelper.toMap(UTUpdIn, new HashMap(), "UsageType").get("UsageType"));
+    }
+  }
+
+
+/**
+ *
+ * Sets the UsageType
+ * @param UTUpdInIn Value of the UTUpdIn
+ *
+ */
+
+  public void setUsageType(UsageTypeObjectData UTUpdInIn) {
+    UTUpdIn = UTUpdInIn;
+  }
+
+  public void translateFromMap() {
+    UTUpdIn = UsageTypeObjectHelper.fromMap(inputMap, "UsageType");
+  }
+
+/**
+ *
+ * Gets the UsageType
+ * @return Value of the UsageType
+ *
+ */
+
+  public UsageTypeObjectData getUsageType( ) {
+    return UTUpdIn;
+  }
+
+}

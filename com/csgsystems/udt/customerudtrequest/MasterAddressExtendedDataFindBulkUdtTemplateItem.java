@@ -1,0 +1,73 @@
+/*
+ * Generated code DO NOT EDIT
+ * Generated file: MasterAddressExtendedDataFindBulkUdtTemplateItem.java
+ * Copyright 2006 Comverse, Inc. All Rights Reserved.
+*/
+
+package com.csgsystems.udt.customerudtrequest;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.math.BigInteger;
+
+import com.csgsystems.api.bulk.*;
+import com.csgsystems.udt.*;
+
+import com.csgsystems.aruba.connection.BSDMSessionContext;
+import com.csgsystems.om.data.*;
+
+/**
+ *
+ * Class used to create a MasterAddressExtendedDataFindBulkUdtTemplateItem Bulk Template
+ *
+ */
+
+public class MasterAddressExtendedDataFindBulkUdtTemplateItem extends BulkUdtTemplateItem {
+  protected MasterAddressObjectKeyData medfIn;
+/**
+ *
+ * Constructor to create a  MasterAddressExtendedDataFindBulkUdtTemplateItem
+ * @param id Unique request name
+ *
+ */
+  public MasterAddressExtendedDataFindBulkUdtTemplateItem(String id, BSDMSessionContext context, MasterAddressObjectKeyData medfInIn) {
+    super(id, context, "MasterAddressExtendedDataFind");
+    medfIn = medfInIn;
+  }
+
+  public void translateToMap() {
+    if (medfIn != null) {
+      medfIn.resetFlags(true, true);
+      addInput("MasterAddress", MasterAddressObjectKeyHelper.toMap(medfIn, new HashMap(), "MasterAddressObjectKeyData").get("MasterAddressObjectKeyData"));
+    }
+  }
+
+
+/**
+ *
+ * Sets the MasterAddress
+ * @param medfInIn Value of the medfIn
+ *
+ */
+
+  public void setMasterAddress(MasterAddressObjectKeyData medfInIn) {
+    medfIn = medfInIn;
+  }
+
+  public void translateFromMap() {
+    medfIn = MasterAddressObjectKeyHelper.fromMap(inputMap, "MasterAddress");
+  }
+
+/**
+ *
+ * Gets the MasterAddress
+ * @return Value of the MasterAddress
+ *
+ */
+
+  public MasterAddressObjectKeyData getMasterAddress( ) {
+    return medfIn;
+  }
+
+}

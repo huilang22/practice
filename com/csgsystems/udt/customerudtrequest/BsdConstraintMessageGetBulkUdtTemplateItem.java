@@ -1,0 +1,73 @@
+/*
+ * Generated code DO NOT EDIT
+ * Generated file: BsdConstraintMessageGetBulkUdtTemplateItem.java
+ * Copyright 2006 Comverse, Inc. All Rights Reserved.
+*/
+
+package com.csgsystems.udt.customerudtrequest;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.math.BigInteger;
+
+import com.csgsystems.api.bulk.*;
+import com.csgsystems.udt.*;
+
+import com.csgsystems.aruba.connection.BSDMSessionContext;
+import com.csgsystems.utl.data.*;
+
+/**
+ *
+ * Class used to create a BsdConstraintMessageGetBulkUdtTemplateItem Bulk Template
+ *
+ */
+
+public class BsdConstraintMessageGetBulkUdtTemplateItem extends BulkUdtTemplateItem {
+  protected BsdConstraintMessageObjectBaseKeyData bsdConstraintMessageGetIn;
+/**
+ *
+ * Constructor to create a  BsdConstraintMessageGetBulkUdtTemplateItem
+ * @param id Unique request name
+ *
+ */
+  public BsdConstraintMessageGetBulkUdtTemplateItem(String id, BSDMSessionContext context, BsdConstraintMessageObjectBaseKeyData bsdConstraintMessageGetInIn) {
+    super(id, context, "BsdConstraintMessageGet");
+    bsdConstraintMessageGetIn = bsdConstraintMessageGetInIn;
+  }
+
+  public void translateToMap() {
+    if (bsdConstraintMessageGetIn != null) {
+      bsdConstraintMessageGetIn.resetFlags(true, true);
+      addInput("BsdConstraintMessage", BsdConstraintMessageObjectBaseKeyHelper.toMap(bsdConstraintMessageGetIn, new HashMap(), "BsdConstraintMessageObjectBaseKeyData").get("BsdConstraintMessageObjectBaseKeyData"));
+    }
+  }
+
+
+/**
+ *
+ * Sets the BsdConstraintMessage
+ * @param bsdConstraintMessageGetInIn Value of the bsdConstraintMessageGetIn
+ *
+ */
+
+  public void setBsdConstraintMessage(BsdConstraintMessageObjectBaseKeyData bsdConstraintMessageGetInIn) {
+    bsdConstraintMessageGetIn = bsdConstraintMessageGetInIn;
+  }
+
+  public void translateFromMap() {
+    bsdConstraintMessageGetIn = BsdConstraintMessageObjectBaseKeyHelper.fromMap(inputMap, "BsdConstraintMessage");
+  }
+
+/**
+ *
+ * Gets the BsdConstraintMessage
+ * @return Value of the BsdConstraintMessage
+ *
+ */
+
+  public BsdConstraintMessageObjectBaseKeyData getBsdConstraintMessage( ) {
+    return bsdConstraintMessageGetIn;
+  }
+
+}

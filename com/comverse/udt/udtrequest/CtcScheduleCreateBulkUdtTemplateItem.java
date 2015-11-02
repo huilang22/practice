@@ -1,0 +1,79 @@
+/**----------------------------------------------------------------------------+
+ *                       Copyright 2006 by Comverse, Inc.                      |
+ *                            All Rights Reserved                              |
+ *-----------------------------------------------------------------------------+
+ *
+ * Filename
+ * ========
+ * CtcScheduleCreateBulkUdtTemplateItem.java
+ *
+ * DO NOT EDIT. THIS IS AN AUTOMATICALLY GENERATED FILE.
+ *-----------------------------------------------------------------------------*/
+
+package com.comverse.udt.udtrequest;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.math.BigInteger;
+
+import com.csgsystems.api.bulk.*;
+import com.csgsystems.udt.*;
+
+import com.csgsystems.aruba.connection.BSDMSessionContext;
+import com.csgsystems.ctc.data.*;
+
+/**
+ *
+ * Class used to create a CtcScheduleCreateBulkUdtTemplateItem Bulk Template
+ *
+ */
+
+public class CtcScheduleCreateBulkUdtTemplateItem extends BulkUdtTemplateItem {
+  protected CtcScheduleObjectData CreateIn;
+/**
+ *
+ * Constructor to create a  CtcScheduleCreateBulkUdtTemplateItem
+ * @param id Unique request name
+ *
+ */
+  public CtcScheduleCreateBulkUdtTemplateItem(String id, BSDMSessionContext context, CtcScheduleObjectData CreateInIn) {
+    super(id, context, "CtcScheduleCreate");
+    CreateIn = CreateInIn;
+  }
+
+  public void translateToMap() {
+    if (CreateIn != null) {
+      CreateIn.resetFlags(true, true);
+      addInput("CtcSchedule", CtcScheduleObjectHelper.toMap(CreateIn, new HashMap(), "CtcSchedule").get("CtcSchedule"));
+    }
+  }
+
+
+/**
+ *
+ * Sets the CtcSchedule
+ * @param CreateInIn Value of the CreateIn
+ *
+ */
+
+  public void setCtcSchedule(CtcScheduleObjectData CreateInIn) {
+    CreateIn = CreateInIn;
+  }
+
+  public void translateFromMap() {
+    CreateIn = CtcScheduleObjectHelper.fromMap(inputMap, "CtcSchedule");
+  }
+
+/**
+ *
+ * Gets the CtcSchedule
+ * @return Value of the CtcSchedule
+ *
+ */
+
+  public CtcScheduleObjectData getCtcSchedule( ) {
+    return CreateIn;
+  }
+
+}

@@ -1,0 +1,79 @@
+/**----------------------------------------------------------------------------+
+ *                       Copyright 2006 by Comverse, Inc.                      |
+ *                            All Rights Reserved                              |
+ *-----------------------------------------------------------------------------+
+ *
+ * Filename
+ * ========
+ * CmfBonusPointCreateBulkUdtTemplateItem.java
+ *
+ * DO NOT EDIT. THIS IS AN AUTOMATICALLY GENERATED FILE.
+ *-----------------------------------------------------------------------------*/
+
+package com.comverse.udt.udtrequest;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.math.BigInteger;
+
+import com.csgsystems.api.bulk.*;
+import com.csgsystems.udt.*;
+
+import com.csgsystems.aruba.connection.BSDMSessionContext;
+import com.csgsystems.bp.data.*;
+
+/**
+ *
+ * Class used to create a CmfBonusPointCreateBulkUdtTemplateItem Bulk Template
+ *
+ */
+
+public class CmfBonusPointCreateBulkUdtTemplateItem extends BulkUdtTemplateItem {
+  protected CmfBonusPointObjectData CRBDCreateIn;
+/**
+ *
+ * Constructor to create a  CmfBonusPointCreateBulkUdtTemplateItem
+ * @param id Unique request name
+ *
+ */
+  public CmfBonusPointCreateBulkUdtTemplateItem(String id, BSDMSessionContext context, CmfBonusPointObjectData CRBDCreateInIn) {
+    super(id, context, "CmfBonusPointCreate");
+    CRBDCreateIn = CRBDCreateInIn;
+  }
+
+  public void translateToMap() {
+    if (CRBDCreateIn != null) {
+      CRBDCreateIn.resetFlags(true, true);
+      addInput("CmfBonusPoint", CmfBonusPointObjectHelper.toMap(CRBDCreateIn, new HashMap(), "CmfBonusPoint").get("CmfBonusPoint"));
+    }
+  }
+
+
+/**
+ *
+ * Sets the CmfBonusPoint
+ * @param CRBDCreateInIn Value of the CRBDCreateIn
+ *
+ */
+
+  public void setCmfBonusPoint(CmfBonusPointObjectData CRBDCreateInIn) {
+    CRBDCreateIn = CRBDCreateInIn;
+  }
+
+  public void translateFromMap() {
+    CRBDCreateIn = CmfBonusPointObjectHelper.fromMap(inputMap, "CmfBonusPoint");
+  }
+
+/**
+ *
+ * Gets the CmfBonusPoint
+ * @return Value of the CmfBonusPoint
+ *
+ */
+
+  public CmfBonusPointObjectData getCmfBonusPoint( ) {
+    return CRBDCreateIn;
+  }
+
+}

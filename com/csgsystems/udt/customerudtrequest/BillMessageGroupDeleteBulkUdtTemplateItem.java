@@ -1,0 +1,73 @@
+/*
+ * Generated code DO NOT EDIT
+ * Generated file: BillMessageGroupDeleteBulkUdtTemplateItem.java
+ * Copyright 2006 Comverse, Inc. All Rights Reserved.
+*/
+
+package com.csgsystems.udt.customerudtrequest;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.math.BigInteger;
+
+import com.csgsystems.api.bulk.*;
+import com.csgsystems.udt.*;
+
+import com.csgsystems.aruba.connection.BSDMSessionContext;
+import com.csgsystems.bp.data.*;
+
+/**
+ *
+ * Class used to create a BillMessageGroupDeleteBulkUdtTemplateItem Bulk Template
+ *
+ */
+
+public class BillMessageGroupDeleteBulkUdtTemplateItem extends BulkUdtTemplateItem {
+  protected BillMessageGroupObjectKeyData MGIDeleteIn;
+/**
+ *
+ * Constructor to create a  BillMessageGroupDeleteBulkUdtTemplateItem
+ * @param id Unique request name
+ *
+ */
+  public BillMessageGroupDeleteBulkUdtTemplateItem(String id, BSDMSessionContext context, BillMessageGroupObjectKeyData MGIDeleteInIn) {
+    super(id, context, "BillMessageGroupDelete");
+    MGIDeleteIn = MGIDeleteInIn;
+  }
+
+  public void translateToMap() {
+    if (MGIDeleteIn != null) {
+      MGIDeleteIn.resetFlags(true, true);
+      addInput("BillMessageGroup", BillMessageGroupObjectKeyHelper.toMap(MGIDeleteIn, new HashMap(), "BillMessageGroupObjectKeyData").get("BillMessageGroupObjectKeyData"));
+    }
+  }
+
+
+/**
+ *
+ * Sets the BillMessageGroup
+ * @param MGIDeleteInIn Value of the MGIDeleteIn
+ *
+ */
+
+  public void setBillMessageGroup(BillMessageGroupObjectKeyData MGIDeleteInIn) {
+    MGIDeleteIn = MGIDeleteInIn;
+  }
+
+  public void translateFromMap() {
+    MGIDeleteIn = BillMessageGroupObjectKeyHelper.fromMap(inputMap, "BillMessageGroup");
+  }
+
+/**
+ *
+ * Gets the BillMessageGroup
+ * @return Value of the BillMessageGroup
+ *
+ */
+
+  public BillMessageGroupObjectKeyData getBillMessageGroup( ) {
+    return MGIDeleteIn;
+  }
+
+}

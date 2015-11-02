@@ -1,0 +1,73 @@
+/*
+ * Generated code DO NOT EDIT
+ * Generated file: RewardBalanceEntityMappingUpdateBulkUdtTemplateItem.java
+ * Copyright 2006 Comverse, Inc. All Rights Reserved.
+*/
+
+package com.csgsystems.udt.customerudtrequest;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.math.BigInteger;
+
+import com.csgsystems.api.bulk.*;
+import com.csgsystems.udt.*;
+
+import com.csgsystems.aruba.connection.BSDMSessionContext;
+import com.csgsystems.bp.data.*;
+
+/**
+ *
+ * Class used to create a RewardBalanceEntityMappingUpdateBulkUdtTemplateItem Bulk Template
+ *
+ */
+
+public class RewardBalanceEntityMappingUpdateBulkUdtTemplateItem extends BulkUdtTemplateItem {
+  protected RewardBalanceEntityMappingObjectData RBEMUpdateIn;
+/**
+ *
+ * Constructor to create a  RewardBalanceEntityMappingUpdateBulkUdtTemplateItem
+ * @param id Unique request name
+ *
+ */
+  public RewardBalanceEntityMappingUpdateBulkUdtTemplateItem(String id, BSDMSessionContext context, RewardBalanceEntityMappingObjectData RBEMUpdateInIn) {
+    super(id, context, "RewardBalanceEntityMappingUpdate");
+    RBEMUpdateIn = RBEMUpdateInIn;
+  }
+
+  public void translateToMap() {
+    if (RBEMUpdateIn != null) {
+      RBEMUpdateIn.resetFlags(true, true);
+      addInput("RewardBalanceEntityMapping", RewardBalanceEntityMappingObjectHelper.toMap(RBEMUpdateIn, new HashMap(), "RewardBalanceEntityMapping").get("RewardBalanceEntityMapping"));
+    }
+  }
+
+
+/**
+ *
+ * Sets the RewardBalanceEntityMapping
+ * @param RBEMUpdateInIn Value of the RBEMUpdateIn
+ *
+ */
+
+  public void setRewardBalanceEntityMapping(RewardBalanceEntityMappingObjectData RBEMUpdateInIn) {
+    RBEMUpdateIn = RBEMUpdateInIn;
+  }
+
+  public void translateFromMap() {
+    RBEMUpdateIn = RewardBalanceEntityMappingObjectHelper.fromMap(inputMap, "RewardBalanceEntityMapping");
+  }
+
+/**
+ *
+ * Gets the RewardBalanceEntityMapping
+ * @return Value of the RewardBalanceEntityMapping
+ *
+ */
+
+  public RewardBalanceEntityMappingObjectData getRewardBalanceEntityMapping( ) {
+    return RBEMUpdateIn;
+  }
+
+}

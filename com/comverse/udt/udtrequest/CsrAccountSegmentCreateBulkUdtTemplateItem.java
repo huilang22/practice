@@ -1,0 +1,79 @@
+/**----------------------------------------------------------------------------+
+ *                       Copyright 2006 by Comverse, Inc.                      |
+ *                            All Rights Reserved                              |
+ *-----------------------------------------------------------------------------+
+ *
+ * Filename
+ * ========
+ * CsrAccountSegmentCreateBulkUdtTemplateItem.java
+ *
+ * DO NOT EDIT. THIS IS AN AUTOMATICALLY GENERATED FILE.
+ *-----------------------------------------------------------------------------*/
+
+package com.comverse.udt.udtrequest;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.math.BigInteger;
+
+import com.csgsystems.api.bulk.*;
+import com.csgsystems.udt.*;
+
+import com.csgsystems.aruba.connection.BSDMSessionContext;
+import com.csgsystems.bp.data.*;
+
+/**
+ *
+ * Class used to create a CsrAccountSegmentCreateBulkUdtTemplateItem Bulk Template
+ *
+ */
+
+public class CsrAccountSegmentCreateBulkUdtTemplateItem extends BulkUdtTemplateItem {
+  protected CsrAccountSegmentObjectData CASCreateIn;
+/**
+ *
+ * Constructor to create a  CsrAccountSegmentCreateBulkUdtTemplateItem
+ * @param id Unique request name
+ *
+ */
+  public CsrAccountSegmentCreateBulkUdtTemplateItem(String id, BSDMSessionContext context, CsrAccountSegmentObjectData CASCreateInIn) {
+    super(id, context, "CsrAccountSegmentCreate");
+    CASCreateIn = CASCreateInIn;
+  }
+
+  public void translateToMap() {
+    if (CASCreateIn != null) {
+      CASCreateIn.resetFlags(true, true);
+      addInput("CsrAccountSegment", CsrAccountSegmentObjectHelper.toMap(CASCreateIn, new HashMap(), "CsrAccountSegment").get("CsrAccountSegment"));
+    }
+  }
+
+
+/**
+ *
+ * Sets the CsrAccountSegment
+ * @param CASCreateInIn Value of the CASCreateIn
+ *
+ */
+
+  public void setCsrAccountSegment(CsrAccountSegmentObjectData CASCreateInIn) {
+    CASCreateIn = CASCreateInIn;
+  }
+
+  public void translateFromMap() {
+    CASCreateIn = CsrAccountSegmentObjectHelper.fromMap(inputMap, "CsrAccountSegment");
+  }
+
+/**
+ *
+ * Gets the CsrAccountSegment
+ * @return Value of the CsrAccountSegment
+ *
+ */
+
+  public CsrAccountSegmentObjectData getCsrAccountSegment( ) {
+    return CASCreateIn;
+  }
+
+}

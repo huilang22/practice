@@ -1,0 +1,74 @@
+/*
+ * Generated code DO NOT EDIT
+ * Generated file: OpenItemFindBulkUdtTemplateItem.java
+ * Copyright 2006 Comverse, Inc. All Rights Reserved.
+*/
+
+package com.csgsystems.udt.customerudtrequest;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.math.BigInteger;
+
+import com.csgsystems.api.bulk.*;
+import com.csgsystems.udt.*;
+
+import com.csgsystems.aruba.connection.BSDMSessionContext;
+import com.csgsystems.bp.data.*;
+
+/**
+ *
+ * Class used to create a OpenItemFindBulkUdtTemplateItem Bulk Template
+ *
+ */
+
+public class OpenItemFindBulkUdtTemplateItem extends BulkUdtTemplateItem {
+  protected OpenItemObjectFilter OIIFindIn;
+/**
+ *
+ * Constructor to create a  OpenItemFindBulkUdtTemplateItem
+ * @param id Unique request name
+ *
+ */
+  public OpenItemFindBulkUdtTemplateItem(String id, BSDMSessionContext context, OpenItemObjectFilter OIIFindInIn) {
+    super(id, context, "OpenItemFind");
+    OIIFindIn = OIIFindInIn;
+  }
+
+  public void translateToMap() {
+    if (OIIFindIn != null) {
+      Integer index =  OIIFindIn.getIndex();
+      if (index != null) addInput("Index", index);
+      addInput("OpenItem", OpenItemObjectHelper.toMap(OIIFindIn, new HashMap(), "OpenItem").get("OpenItem"));
+    }
+  }
+
+
+/**
+ *
+ * Sets the OpenItem
+ * @param OIIFindInIn Value of the OIIFindIn
+ *
+ */
+
+  public void setOpenItem(OpenItemObjectFilter OIIFindInIn) {
+    OIIFindIn = OIIFindInIn;
+  }
+
+  public void translateFromMap() {
+    OIIFindIn = OpenItemObjectHelper.fromMapFilter(inputMap, "OpenItem");
+  }
+
+/**
+ *
+ * Gets the OpenItem
+ * @return Value of the OpenItem
+ *
+ */
+
+  public OpenItemObjectFilter getOpenItem( ) {
+    return OIIFindIn;
+  }
+
+}

@@ -1,0 +1,74 @@
+/*
+ * Generated code DO NOT EDIT
+ * Generated file: StatusReasonFindBulkUdtTemplateItem.java
+ * Copyright 2006 Comverse, Inc. All Rights Reserved.
+*/
+
+package com.csgsystems.udt.customerudtrequest;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.math.BigInteger;
+
+import com.csgsystems.api.bulk.*;
+import com.csgsystems.udt.*;
+
+import com.csgsystems.aruba.connection.BSDMSessionContext;
+import com.csgsystems.cf.data.*;
+
+/**
+ *
+ * Class used to create a StatusReasonFindBulkUdtTemplateItem Bulk Template
+ *
+ */
+
+public class StatusReasonFindBulkUdtTemplateItem extends BulkUdtTemplateItem {
+  protected StatusReasonObjectFilter StatusReasonFindIn;
+/**
+ *
+ * Constructor to create a  StatusReasonFindBulkUdtTemplateItem
+ * @param id Unique request name
+ *
+ */
+  public StatusReasonFindBulkUdtTemplateItem(String id, BSDMSessionContext context, StatusReasonObjectFilter StatusReasonFindInIn) {
+    super(id, context, "StatusReasonFind");
+    StatusReasonFindIn = StatusReasonFindInIn;
+  }
+
+  public void translateToMap() {
+    if (StatusReasonFindIn != null) {
+      Integer index =  StatusReasonFindIn.getIndex();
+      if (index != null) addInput("Index", index);
+      addInput("StatusReason", StatusReasonObjectHelper.toMap(StatusReasonFindIn, new HashMap(), "StatusReason").get("StatusReason"));
+    }
+  }
+
+
+/**
+ *
+ * Sets the StatusReason
+ * @param StatusReasonFindInIn Value of the StatusReasonFindIn
+ *
+ */
+
+  public void setStatusReason(StatusReasonObjectFilter StatusReasonFindInIn) {
+    StatusReasonFindIn = StatusReasonFindInIn;
+  }
+
+  public void translateFromMap() {
+    StatusReasonFindIn = StatusReasonObjectHelper.fromMapFilter(inputMap, "StatusReason");
+  }
+
+/**
+ *
+ * Gets the StatusReason
+ * @return Value of the StatusReason
+ *
+ */
+
+  public StatusReasonObjectFilter getStatusReason( ) {
+    return StatusReasonFindIn;
+  }
+
+}

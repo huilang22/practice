@@ -1,0 +1,74 @@
+/*
+ * Generated code DO NOT EDIT
+ * Generated file: NoteTemplateFindBulkUdtTemplateItem.java
+ * Copyright 2006 Comverse, Inc. All Rights Reserved.
+*/
+
+package com.csgsystems.udt.customerudtrequest;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.math.BigInteger;
+
+import com.csgsystems.api.bulk.*;
+import com.csgsystems.udt.*;
+
+import com.csgsystems.aruba.connection.BSDMSessionContext;
+import com.csgsystems.cf.data.*;
+
+/**
+ *
+ * Class used to create a NoteTemplateFindBulkUdtTemplateItem Bulk Template
+ *
+ */
+
+public class NoteTemplateFindBulkUdtTemplateItem extends BulkUdtTemplateItem {
+  protected NoteTemplateObjectFilter NoteTemplateFindIn;
+/**
+ *
+ * Constructor to create a  NoteTemplateFindBulkUdtTemplateItem
+ * @param id Unique request name
+ *
+ */
+  public NoteTemplateFindBulkUdtTemplateItem(String id, BSDMSessionContext context, NoteTemplateObjectFilter NoteTemplateFindInIn) {
+    super(id, context, "NoteTemplateFind");
+    NoteTemplateFindIn = NoteTemplateFindInIn;
+  }
+
+  public void translateToMap() {
+    if (NoteTemplateFindIn != null) {
+      Integer index =  NoteTemplateFindIn.getIndex();
+      if (index != null) addInput("Index", index);
+      addInput("NoteTemplate", NoteTemplateObjectHelper.toMap(NoteTemplateFindIn, new HashMap(), "NoteTemplate").get("NoteTemplate"));
+    }
+  }
+
+
+/**
+ *
+ * Sets the NoteTemplate
+ * @param NoteTemplateFindInIn Value of the NoteTemplateFindIn
+ *
+ */
+
+  public void setNoteTemplate(NoteTemplateObjectFilter NoteTemplateFindInIn) {
+    NoteTemplateFindIn = NoteTemplateFindInIn;
+  }
+
+  public void translateFromMap() {
+    NoteTemplateFindIn = NoteTemplateObjectHelper.fromMapFilter(inputMap, "NoteTemplate");
+  }
+
+/**
+ *
+ * Gets the NoteTemplate
+ * @return Value of the NoteTemplate
+ *
+ */
+
+  public NoteTemplateObjectFilter getNoteTemplate( ) {
+    return NoteTemplateFindIn;
+  }
+
+}

@@ -1,0 +1,70 @@
+/*
+ * Generated code DO NOT EDIT
+ * Generated file: BsdRelationalConstraintTypeSequenceGetNoOpBulkUdtTemplateItem.java
+ * Copyright 2006 Comverse, Inc. All Rights Reserved.
+*/
+
+package com.csgsystems.udt.customerudtrequest;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.math.BigInteger;
+
+import com.csgsystems.api.bulk.*;
+import com.csgsystems.udt.*;
+
+import com.csgsystems.aruba.connection.BSDMSessionContext;
+import com.csgsystems.utl.data.*;
+
+/**
+ *
+ * NoOp class used to simulate a BsdRelationalConstraintTypeSequenceGetNoOpBulkUdtTemplateItem Bulk Request/Response
+ *
+ */
+public class BsdRelationalConstraintTypeSequenceGetNoOpBulkUdtTemplateItem extends BulkUdtTemplateItem {
+
+  protected BsdRelationalConstraintTypeObjectKeyData noOpIn;
+
+/**
+ *
+ * Constructor to create a   BsdRelationalConstraintTypeSequenceGetNoOpBulkUdtTemplateItem
+ * @param id Unique request name
+ * @param noOpInIn Simulated response object
+ *
+ */
+  public BsdRelationalConstraintTypeSequenceGetNoOpBulkUdtTemplateItem(String id, BSDMSessionContext context, BsdRelationalConstraintTypeObjectKeyData noOpInIn) {
+    super(id, context, "BsdRelationalConstraintTypeSequenceGet");
+    isNoOp = true;
+    noOpIn = noOpInIn;
+  }
+
+  public void translateToMap () {
+    if (noOpIn != null) {
+      noOpIn.resetFlags(true, true);
+      addInput("BsdRelationalConstraintType", BsdRelationalConstraintTypeObjectKeyHelper.toMap(noOpIn, new HashMap(), "BsdRelationalConstraintType").get("BsdRelationalConstraintType"));
+    }
+  }
+/**
+ *
+ * Sets the  BsdRelationalConstraintType
+ * @param noOpInIn BsdRelationalConstraintTypeObjectKeyData to set
+ *
+ */
+  public void setBsdRelationalConstraintType(BsdRelationalConstraintTypeObjectKeyData noOpInIn) {
+    noOpIn = noOpInIn;
+  };
+/**
+ *
+ * Retrives the BsdRelationalConstraintType passed into the constructor
+ * @return Simulated response
+ *
+ */
+  public BsdRelationalConstraintTypeObjectKeyData getBsdRelationalConstraintType() {
+    return noOpIn;
+  }
+
+public void translateFromMap() {
+    noOpIn = BsdRelationalConstraintTypeObjectKeyHelper.fromMap(inputMap, "BsdRelationalConstraintType");
+  }
+}

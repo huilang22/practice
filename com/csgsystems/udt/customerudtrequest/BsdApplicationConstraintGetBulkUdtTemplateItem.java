@@ -1,0 +1,73 @@
+/*
+ * Generated code DO NOT EDIT
+ * Generated file: BsdApplicationConstraintGetBulkUdtTemplateItem.java
+ * Copyright 2006 Comverse, Inc. All Rights Reserved.
+*/
+
+package com.csgsystems.udt.customerudtrequest;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.math.BigInteger;
+
+import com.csgsystems.api.bulk.*;
+import com.csgsystems.udt.*;
+
+import com.csgsystems.aruba.connection.BSDMSessionContext;
+import com.csgsystems.utl.data.*;
+
+/**
+ *
+ * Class used to create a BsdApplicationConstraintGetBulkUdtTemplateItem Bulk Template
+ *
+ */
+
+public class BsdApplicationConstraintGetBulkUdtTemplateItem extends BulkUdtTemplateItem {
+  protected BsdApplicationConstraintObjectKeyData bsdApplicationConstraintGetIn;
+/**
+ *
+ * Constructor to create a  BsdApplicationConstraintGetBulkUdtTemplateItem
+ * @param id Unique request name
+ *
+ */
+  public BsdApplicationConstraintGetBulkUdtTemplateItem(String id, BSDMSessionContext context, BsdApplicationConstraintObjectKeyData bsdApplicationConstraintGetInIn) {
+    super(id, context, "BsdApplicationConstraintGet");
+    bsdApplicationConstraintGetIn = bsdApplicationConstraintGetInIn;
+  }
+
+  public void translateToMap() {
+    if (bsdApplicationConstraintGetIn != null) {
+      bsdApplicationConstraintGetIn.resetFlags(true, true);
+      addInput("BsdApplicationConstraint", BsdApplicationConstraintObjectKeyHelper.toMap(bsdApplicationConstraintGetIn, new HashMap(), "BsdApplicationConstraintObjectKeyData").get("BsdApplicationConstraintObjectKeyData"));
+    }
+  }
+
+
+/**
+ *
+ * Sets the BsdApplicationConstraint
+ * @param bsdApplicationConstraintGetInIn Value of the bsdApplicationConstraintGetIn
+ *
+ */
+
+  public void setBsdApplicationConstraint(BsdApplicationConstraintObjectKeyData bsdApplicationConstraintGetInIn) {
+    bsdApplicationConstraintGetIn = bsdApplicationConstraintGetInIn;
+  }
+
+  public void translateFromMap() {
+    bsdApplicationConstraintGetIn = BsdApplicationConstraintObjectKeyHelper.fromMap(inputMap, "BsdApplicationConstraint");
+  }
+
+/**
+ *
+ * Gets the BsdApplicationConstraint
+ * @return Value of the BsdApplicationConstraint
+ *
+ */
+
+  public BsdApplicationConstraintObjectKeyData getBsdApplicationConstraint( ) {
+    return bsdApplicationConstraintGetIn;
+  }
+
+}

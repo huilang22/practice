@@ -1,0 +1,80 @@
+/**----------------------------------------------------------------------------+
+ *                       Copyright 2006 by Comverse, Inc.                      |
+ *                            All Rights Reserved                              |
+ *-----------------------------------------------------------------------------+
+ *
+ * Filename
+ * ========
+ * CorridorFindBulkUdtTemplateItem.java
+ *
+ * DO NOT EDIT. THIS IS AN AUTOMATICALLY GENERATED FILE.
+ *-----------------------------------------------------------------------------*/
+
+package com.comverse.udt.udtrequest;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.math.BigInteger;
+
+import com.csgsystems.api.bulk.*;
+import com.csgsystems.udt.*;
+
+import com.csgsystems.aruba.connection.BSDMSessionContext;
+import com.csgsystems.bp.data.*;
+
+/**
+ *
+ * Class used to create a CorridorFindBulkUdtTemplateItem Bulk Template
+ *
+ */
+
+public class CorridorFindBulkUdtTemplateItem extends BulkUdtTemplateItem {
+  protected CorridorObjectFilter CCFindIn;
+/**
+ *
+ * Constructor to create a  CorridorFindBulkUdtTemplateItem
+ * @param id Unique request name
+ *
+ */
+  public CorridorFindBulkUdtTemplateItem(String id, BSDMSessionContext context, CorridorObjectFilter CCFindInIn) {
+    super(id, context, "CorridorFind");
+    CCFindIn = CCFindInIn;
+  }
+
+  public void translateToMap() {
+    if (CCFindIn != null) {
+      Integer index =  CCFindIn.getIndex();
+      if (index != null) addInput("Index", index);
+      addInput("Corridor", CorridorObjectHelper.toMap(CCFindIn, new HashMap(), "Corridor").get("Corridor"));
+    }
+  }
+
+
+/**
+ *
+ * Sets the Corridor
+ * @param CCFindInIn Value of the CCFindIn
+ *
+ */
+
+  public void setCorridor(CorridorObjectFilter CCFindInIn) {
+    CCFindIn = CCFindInIn;
+  }
+
+  public void translateFromMap() {
+    CCFindIn = CorridorObjectHelper.fromMapFilter(inputMap, "Corridor");
+  }
+
+/**
+ *
+ * Gets the Corridor
+ * @return Value of the Corridor
+ *
+ */
+
+  public CorridorObjectFilter getCorridor( ) {
+    return CCFindIn;
+  }
+
+}

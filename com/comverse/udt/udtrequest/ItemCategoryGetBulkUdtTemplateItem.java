@@ -1,0 +1,79 @@
+/**----------------------------------------------------------------------------+
+ *                       Copyright 2006 by Comverse, Inc.                      |
+ *                            All Rights Reserved                              |
+ *-----------------------------------------------------------------------------+
+ *
+ * Filename
+ * ========
+ * ItemCategoryGetBulkUdtTemplateItem.java
+ *
+ * DO NOT EDIT. THIS IS AN AUTOMATICALLY GENERATED FILE.
+ *-----------------------------------------------------------------------------*/
+
+package com.comverse.udt.udtrequest;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.math.BigInteger;
+
+import com.csgsystems.api.bulk.*;
+import com.csgsystems.udt.*;
+
+import com.csgsystems.aruba.connection.BSDMSessionContext;
+import com.csgsystems.cf.data.*;
+
+/**
+ *
+ * Class used to create a ItemCategoryGetBulkUdtTemplateItem Bulk Template
+ *
+ */
+
+public class ItemCategoryGetBulkUdtTemplateItem extends BulkUdtTemplateItem {
+  protected ItemCategoryObjectKeyData itemCategoryGetIn;
+/**
+ *
+ * Constructor to create a  ItemCategoryGetBulkUdtTemplateItem
+ * @param id Unique request name
+ *
+ */
+  public ItemCategoryGetBulkUdtTemplateItem(String id, BSDMSessionContext context, ItemCategoryObjectKeyData itemCategoryGetInIn) {
+    super(id, context, "ItemCategoryGet");
+    itemCategoryGetIn = itemCategoryGetInIn;
+  }
+
+  public void translateToMap() {
+    if (itemCategoryGetIn != null) {
+      itemCategoryGetIn.resetFlags(true, true);
+      addInput("ItemCategory", ItemCategoryObjectKeyHelper.toMap(itemCategoryGetIn, new HashMap(), "ItemCategoryObjectKeyData").get("ItemCategoryObjectKeyData"));
+    }
+  }
+
+
+/**
+ *
+ * Sets the ItemCategory
+ * @param itemCategoryGetInIn Value of the itemCategoryGetIn
+ *
+ */
+
+  public void setItemCategory(ItemCategoryObjectKeyData itemCategoryGetInIn) {
+    itemCategoryGetIn = itemCategoryGetInIn;
+  }
+
+  public void translateFromMap() {
+    itemCategoryGetIn = ItemCategoryObjectKeyHelper.fromMap(inputMap, "ItemCategory");
+  }
+
+/**
+ *
+ * Gets the ItemCategory
+ * @return Value of the ItemCategory
+ *
+ */
+
+  public ItemCategoryObjectKeyData getItemCategory( ) {
+    return itemCategoryGetIn;
+  }
+
+}

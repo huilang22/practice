@@ -1,0 +1,73 @@
+/*
+ * Generated code DO NOT EDIT
+ * Generated file: PaymentReverseBulkUdtTemplateItem.java
+ * Copyright 2006 Comverse, Inc. All Rights Reserved.
+*/
+
+package com.csgsystems.udt.customerudtrequest;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.math.BigInteger;
+
+import com.csgsystems.api.bulk.*;
+import com.csgsystems.udt.*;
+
+import com.csgsystems.aruba.connection.BSDMSessionContext;
+import com.csgsystems.bp.data.*;
+
+/**
+ *
+ * Class used to create a PaymentReverseBulkUdtTemplateItem Bulk Template
+ *
+ */
+
+public class PaymentReverseBulkUdtTemplateItem extends BulkUdtTemplateItem {
+  protected PaymentObjectData payReverseIn;
+/**
+ *
+ * Constructor to create a  PaymentReverseBulkUdtTemplateItem
+ * @param id Unique request name
+ *
+ */
+  public PaymentReverseBulkUdtTemplateItem(String id, BSDMSessionContext context, PaymentObjectData payReverseInIn) {
+    super(id, context, "PaymentReverse");
+    payReverseIn = payReverseInIn;
+  }
+
+  public void translateToMap() {
+    if (payReverseIn != null) {
+      payReverseIn.resetFlags(true, true);
+      addInput("Payment", PaymentObjectHelper.toMap(payReverseIn, new HashMap(), "Payment").get("Payment"));
+    }
+  }
+
+
+/**
+ *
+ * Sets the Payment
+ * @param payReverseInIn Value of the payReverseIn
+ *
+ */
+
+  public void setPayment(PaymentObjectData payReverseInIn) {
+    payReverseIn = payReverseInIn;
+  }
+
+  public void translateFromMap() {
+    payReverseIn = PaymentObjectHelper.fromMap(inputMap, "Payment");
+  }
+
+/**
+ *
+ * Gets the Payment
+ * @return Value of the Payment
+ *
+ */
+
+  public PaymentObjectData getPayment( ) {
+    return payReverseIn;
+  }
+
+}
